@@ -1,0 +1,516 @@
+/*
+  Custom stylesheet for JMS Custom Audio
+
+  This design takes inspiration from the original JMS site archived on
+  the Wayback Machine while modernising the layout and typography. A
+  rich purple palette anchors the site, contrasted by light backgrounds
+  and crisp, readable typography using the Inter typeface. The layout
+  responds gracefully to different screen sizes, ensuring that the
+  product images and forms remain accessible on both desktop and mobile
+  devices.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Colour palette and design tokens */
+:root {
+  --primary-color: #5a2d91;       /* primary purple used for accents and buttons */
+  --primary-dark: #311a56;        /* deep purple used for the header and footer */
+  --section-light: #faf6ff;       /* very light purple tint for alternating sections */
+  --section-alt: #f3e9ff;         /* slightly darker tint for alternate blocks */
+  --text-dark: #1c1a22;           /* dark text for high contrast on light backgrounds */
+  --text-light: #625b71;          /* muted text colour for secondary copy */
+  --border-color: #e5dfe9;        /* soft border colour for cards and inputs */
+  --radius: 8px;                  /* corner radius used throughout the site */
+}
+
+/* Resets and basic styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header and navigation */
+.header {
+  background-color: var(--primary-dark);
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Hidden checkbox used to toggle the mobile navigation */
+.nav-toggle {
+  display: none;
+}
+
+/* Hamburger icon, comprised of three bars */
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.nav-toggle-label span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  margin: 3px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Rotate the bars to form an 'X' when the menu is open */
+.nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+.nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Responsive navigation menu */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--primary-dark);
+    display: none;
+    gap: 0;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .nav-toggle-label {
+    display: flex;
+  }
+  /* Show the nav menu when the checkbox is checked */
+  .nav-toggle:checked ~ nav .nav-links {
+    display: flex;
+  }
+}
+
+/* Hero section */
+.hero {
+  background-color: #ffffff;
+  padding: 4rem 1rem;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.125rem;
+  color: var(--text-light);
+  max-width: 560px;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  max-height: 420px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 1rem;
+  background-color: var(--section-light);
+}
+
+.section.alt {
+  background-color: var(--section-alt);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+/* Product overview */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-image,
+.product-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-info p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.product-info ul {
+  margin-left: 1.5rem;
+  list-style-type: disc;
+  color: var(--text-light);
+}
+
+.product-info ul li + li {
+  margin-top: 0.5rem;
+}
+
+/* Features grid */
+.features-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: left;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transform: translateY(-3px);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* About section */
+.about-section {
+  padding: 4rem 1rem;
+  background-color: var(--section-light);
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-container p {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Contact section */
+.contact-section {
+  padding: 0;
+  background-color: #ffffff;
+}
+
+/* Purple banner at top of contact section */
+.contact-banner {
+  height: 60px;
+  background-color: var(--primary-color);
+  width: 100%;
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: -30px auto 0 auto; /* Pull the container up so it overlaps the banner */
+  background-color: #ffffff;
+  padding: 3rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: #ffffff;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+  grid-column: span 2;
+}
+
+.contact-form .full {
+  grid-column: span 2;
+}
+
+/* Stack the contact form fields into a single column on very narrow screens */
+@media (max-width: 600px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+  .contact-form .full {
+    grid-column: span 1;
+  }
+  .contact-form textarea,
+  .submit-btn {
+    grid-column: span 1;
+  }
+}
+
+.submit-btn {
+  grid-column: span 2;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.contact-info {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.contact-info p + p {
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-dark);
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.footer p {
+  font-size: 0.875rem;
+  color: #d5cdea;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .nav-links {
+    gap: 0.75rem;
+  }
+  .hero-container {
+    gap: 2rem;
+  }
+  /* On small screens stack the hero content vertically and centre it */
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-text,
+  .hero-image {
+    width: 100%;
+    flex: none;
+  }
+  .hero-image img {
+    max-height: 320px;
+  }
+
+  /* Display feature cards in a single column on very small screens */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}

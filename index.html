@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JMS Custom Audio | Hearing is Believing</title>
+    <!-- Search engine optimisation -->
+    <meta
+      name="description"
+      content="Discover the hand‑built Power Sponge attenuator from JMS Custom Audio. Enjoy pure tube tone at any volume with our high‑quality, custom‑wired attenuators."
+    />
+    <meta
+      name="keywords"
+      content="Power Sponge attenuator, tube amp volume control, JMS Custom Audio, hand‑built attenuator, guitar amp attenuator"
+    />
+    <!-- Link to the site stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Inter font for a modern, readable typeface -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Primary site header with responsive navigation -->
+    <header class="header">
+      <div class="nav-container">
+        <div class="logo">JMS Custom Audio</div>
+        <!-- Hidden checkbox used to toggle the mobile nav -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <!-- Hamburger icon visible on small screens -->
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>Hearing is Believing</h1>
+          <p>
+            Experience your amp like never before—our hand‑built attenuators
+            deliver pure tube tone at any volume. Crafted in Canada with the
+            finest components for discerning musicians.
+          </p>
+          <div class="hero-buttons">
+            <a href="#products" class="button btn-primary">Discover Products</a>
+            <a href="#contact" class="button btn-secondary">Contact Us</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="assets/powersponge-shadow.png"
+            alt="Power Sponge attenuator with drop shadow"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Products overview section -->
+    <section class="section" id="products">
+      <h2 class="section-title">Our Products</h2>
+      <p class="section-subtitle">Power Sponge Attenuator</p>
+      <div class="product-container">
+        <div class="product-image">
+          <img src="assets/powersponge.png" alt="Power Sponge attenuator" />
+        </div>
+        <div class="product-info">
+          <p>
+            The Power Sponge attenuator is a hand‑built, custom‑wired unit that
+            gives you a second volume control for your tube amplifier. Dial in
+            your tone and power tube warmth while keeping your sound at
+            manageable levels.
+          </p>
+          <ul>
+            <li>
+              Plug in and dial in the amount of speaker volume and tube warmth
+              you desire.
+            </li>
+            <li>
+              Allows the amplifier to be opened up yet at lower sound levels.
+            </li>
+            <li>
+              Perfect for condos, bedroom sound levels and ideal for recording.
+            </li>
+            <li>Compatible with 8 Ω, 4 Ω and 16 Ω outputs.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key features section -->
+    <section class="section alt" id="features">
+      <h2 class="section-title">Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Finest Materials</h3>
+          <p>
+            We use only the best quality components for exceptional reliability
+            and sonic purity.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Supreme Audio Quality</h3>
+          <p>
+            Enjoy high‑quality audio ideal for both recording and live
+            performance.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Fully Guaranteed</h3>
+          <p>
+            We stand behind our products with a full guarantee (shipping
+            charges may apply).
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Rigid Construction</h3>
+          <p>
+            Built in solid Hammond aluminum enclosures for unmatched
+            durability.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section class="about-section" id="about">
+      <h2 class="section-title">About Us</h2>
+      <div class="about-container">
+        <p>
+          At JMS Custom Audio we strive to make high‑quality products with
+          unique features and benefits. Our attenuators are carefully hand
+          built to help you achieve the perfect tone at any volume. Please
+          contact us if you have any questions regarding our products and
+          services.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact-section" id="contact">
+      <!-- Purple banner across the top, reminiscent of the archived site -->
+      <div class="contact-banner"></div>
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2>Contact Us</h2>
+          <div class="divider"></div>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/xrezzzkv" method="POST">
+          <input type="text" name="name" placeholder="Name*" required />
+          <input type="email" name="email" placeholder="Email*" required />
+          <input type="tel" name="phone" placeholder="Phone (optional)" />
+          <select name="impedance" required>
+            <option value="" disabled selected>Choose Impedance*</option>
+            <option value="8ohm">8 Ω</option>
+            <option value="4ohm">4 Ω</option>
+            <option value="16ohm">16 Ω</option>
+          </select>
+          <!-- New field for customers to specify the equipment or amp this attenuator will be paired with -->
+          <input
+            type="text"
+            name="equipment"
+            placeholder="Equipment (amp model, gear)*"
+            class="full"
+            required
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            class="full"
+          />
+          <textarea
+            name="message"
+            placeholder="Tell us more about your setup and requirements"
+            rows="4"
+          ></textarea>
+          <button type="submit" class="submit-btn full">Submit</button>
+        </form>
+        <div class="contact-info">
+          <p><strong>JMS Custom Audio</strong></p>
+          <p>
+            We strive to make high‑quality products with unique features and
+            benefits. Please contact us if you have any questions regarding
+            our products and services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Site footer -->
+    <footer class="footer">
+      <p>© 2025 JMS Custom Audio. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
